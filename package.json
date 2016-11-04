@@ -1,0 +1,29 @@
+{
+  "name": "random-volume-points",
+  "version": "1.0.0",
+  "description": "generate random 3d points inside a given geometry",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "3d",
+    "points",
+    "generation"
+  ],
+  "author": "nicknikolov <nick@nklv.me>",
+  "license": "MIT",
+  "dependencies": {
+    "geom-triangulate": "^1.0.1",
+    "pex-geom": "^1.0.0-beta.2",
+    "pex-math": "^1.0.1",
+    "ray-geom-intersections": "^1.0.1"
+  },
+  "devDependencies": {
+    "primitive-cube": "^2.0.0",
+    "primitive-sphere": "^2.0.0",
+    "primitive-torus": "^1.0.4",
+    "regl": "^1.3.0",
+    "regl-camera": "^1.1.0"
+  }
+}
