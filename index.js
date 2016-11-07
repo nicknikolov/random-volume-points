@@ -97,9 +97,15 @@ module.exports = function (vertices, faces, numPoints) {
     let pointB = intersectionPoints[1]
     let direction = vec3.sub(vec3.copy(pointB), pointA)
 
-    let randomPoint = vec3.add(vec3.scale(vec3.copy(direction), Math.random()), pointA)
-    pointsCounter++
-    generatedPoints.push(randomPoint)
+    let distanceTravelled = vec3.distance(intersectionPoints[0], intersectionPoints[1])
+    let density = 5 // num points per meter
+    let numPointsToGenerate = Math.floor(distanceTravelled * density) // round it up so we always get at least one point
+
+    for (let j = 0; j < numPointsToGenerate; j++) {
+      let randomPoint = vec3.add(vec3.scale(vec3.copy(direction), Math.random()), pointA)
+      pointsCounter++
+      generatedPoints.push(randomPoint)
+    }
   }
 
   return generatedPoints
